@@ -2,18 +2,109 @@
 :root {
     --SoftRed: hsl(10, 79%, 65%);
     --Cyan: hsl(186, 34%, 60%);
-    -DarkBrown: hsl(25, 47%, 15%);
-    -MediumBrown: hsl(28, 10%, 53%);
+    --DarkBrown: hsl(25, 47%, 15%);
+    --MediumBrown: hsl(28, 10%, 53%);
     --Cream: hsl(27, 66%, 92%);
-    -VeryPaleOrange: hsl(33, 100%, 98%);
+    --VeryPaleOrange: hsl(33, 100%, 98%);
 }
 * {
     margin: 0;
     padding: 0;
     border: 0;
+    list-style: none;
+    text-decoration: none;
     box-sizing: border-box;
     font-size: 18px;
     font-family: 'DM Sans', sans-serif;
+}
+body {
+    background-color: var(--Cream);
+}
+main {
+    position: absolute;
+    width: 90%;
+    min-width: 338px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+header {
+    display: grid;
+    grid-template-columns: auto 5.5rem;
+    padding: 1rem 0;
+    padding-left: 1rem;
+    color: white;
+    background-color: var(--SoftRed);
+    border-radius: 0.5rem;
+    align-items: center;
+}
+main > header > section > h1 {
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+}
+main > header > section > p {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+main > section {
+    background-color: var(--VeryPaleOrange);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+main > section > h1 {
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--DarkBrown);
+}
+main > section > ul {
+    display: flex;
+    justify-content: space-between;
+}
+main > section > ul > li {
+    height: 10rem;
+    width: 2rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    background-color: var(--Cyan);
+    position: relative;
+}
+main > section > ul > li > span {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--MediumBrown);
+}
+.details {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: end;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 0.2rem solid var(--Cream);
+}
+.total > p:first-child {
+    font-size: 0.85rem;
+    color: var(--MediumBrown);
+}
+.total > p:last-child {
+    font-size: 1.7rem;
+    font-weight: bolder;
+    color: var(--DarkBrown);
+}
+.month {
+    text-align: end;
+}
+.month > p:first-child {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.month > p:last-child {
+    font-size: 0.9rem;
+    color: var(--MediumBrown);
 }
 .attribution {
     font-size: 11px;
@@ -21,4 +112,16 @@
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width:500px) {
+    main {
+        max-width: 25rem;
+    }
+    main > section {
+        padding: 1rem 2rem;
+    }
+    main > section > ul > li {
+        width: 2.4rem;
+    }
 }
