@@ -66,13 +66,13 @@ main > section > ul {
     justify-content: space-between;
 }
 main > section > ul > li {
-    height: 10rem;
+    height: 0rem;
     width: 2rem;
     border-radius: 0.2rem;
     text-align: center;
     background-color: var(--SoftRed);
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, height 0.5s ease-in-out;
     cursor: pointer;
 }
 main > section > ul > li.max {
@@ -95,7 +95,6 @@ main > section > ul > li > span:first-child {
 main > section > ul > li > span:last-child {
     opacity: 0;
     position: absolute;
-    /* top: -2rem; */
     top:0;
     left: 50%;
     transform: translateX(-50%);

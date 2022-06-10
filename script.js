@@ -1,17 +1,16 @@
-const ul = document.querySelector('main > section > ul');
+const li = document.querySelectorAll('main > section > ul > li');
 const data = [];
 let mayor;
 
-function card({day, amount}) {
-    const porcentaje = (amount / mayor) * 100;
-    const alto = (porcentaje / 100) * 10;
-    const element = `<li class="${amount >= mayor && "max"}" style="height: ${alto.toFixed(2)}rem; " ><span>${day}</span><span>$${amount}</span></li>`;
-    return element;
-}
-
 function loadData() {
-    data.forEach(element => {
-        ul.insertAdjacentHTML("beforeend",card(element))
+    li.forEach(item=>{
+        const {day, amount} = data.find(ele=>ele.day===item.id) || {day:item.id,amount:0};
+        const porcentaje = (amount / mayor) * 100;
+        const alto = (porcentaje / 100) * 10;
+        if(amount >= mayor) item.className = "max";
+        item.insertAdjacentHTML("beforeend",`<span>${day}</span>`);
+        item.insertAdjacentHTML("beforeend",`<span>$${amount}</span>`);
+        item.style.height = `${alto.toFixed(2)}rem`;
     });
 }
 
